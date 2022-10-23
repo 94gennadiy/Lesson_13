@@ -1,0 +1,527 @@
+.wrapper {
+    overflow: hidden;
+    min-height: 100%;
+}
+
+body {
+    background-color: rgb(145, 129, 81);
+}
+
+.section {
+    margin: 40px;
+}
+
+.section__title {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: white;
+}
+
+.section__item {
+    width: 250px;
+    height: 250px;
+    background-color: olive;
+}
+
+/*======================================================================================================================================================*/
+.section__item--color-transition {
+    transition: all 0.5s ease 0s;
+}
+
+.section__item--color-transition:hover {
+    background-color: #0F2B36;
+}
+
+.section__item--size-transition {
+    transition: all 0.8s ease 0s;
+    border: 2px solid rgba(37, 116, 147, 0);
+}
+
+.section__item--size-transition:hover {
+    width: 350px;
+    height: 350px;
+    border: 2px solid #0F2B36;
+}
+
+.section--hover {
+    display: inline-block;
+}
+
+.section__item--appears {
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 3s ease 1s, background-color 2s linear 3.5s;
+}
+
+.section--hover:hover .section__item--appears {
+    visibility: visible;
+    opacity: 1;
+    background-color: #0F2B36;
+}
+
+.section__item--disappears {
+    visibility: visible;
+    opacity: 1;
+    transition: all 0.5s ease 0s;
+}
+
+.section--hover:hover .section__item--disappears {
+    visibility: hidden;
+    opacity: 0;
+}
+
+.section__item--delay-transition {
+    transition: all 1.5s ease 0.5s;
+}
+
+.section__item--delay-transition:hover {
+    background-color: #0F2B36;
+}
+
+.section__item--linear-transition {
+    transition: all 1.5s linear 0s
+}
+
+.section__item--linear-transition:hover {
+    width: 750px;
+    background-color: #0F2B36;
+}
+
+.section__item--cubic-transition {
+    transition: all 1.5s cubic-bezier(1, 0, 0, 1) 0s
+}
+
+.section__item--cubic-transition:hover {
+    width: 750px;
+    background-color: #0F2B36;
+}
+
+.section__item--steps-transition {
+    transition: width 1.5s steps(4, start) 0s, background-color 1.5s steps(2, start) 0s;
+}
+
+.section__item--steps-transition:hover {
+    width: 1840px;
+    background-color: #0F2B36;
+}
+
+.section__item--property-transition {
+    transition: width 1.5s ease 0s, height 1.5s ease 1.5s, background-color 1.5s ease 3s;
+}
+
+.section__item--property-transition:hover {
+    width: 450px;
+    height: 300px;
+    background-color: #0F2B36;
+}
+
+/*======================================================================================================================================================*/
+.section__item--alternate-animation {
+    animation: rotate 1s linear infinite alternate 0s none;
+    background: url('../img/trololo.png') center/contain no-repeat;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(40deg);
+    }
+
+    50% {
+        transform: rotate(0deg)
+    }
+
+    100% {
+        transform: rotate(-40deg);
+    }
+}
+
+.section__item--bf-animation {
+    animation: pause 1s linear infinite alternate running 0s none;
+    background: url('../img/trololo.png') center/contain no-repeat;
+}
+
+.section__item--bf-animation:hover {
+    animation-play-state: paused;
+}
+
+@keyframes pause {
+    0% {
+        transform: translate(0, 0);
+        scale: 0.5;
+    }
+
+    100% {
+        transform: translate(200px, 0);
+        scale: 1.3;
+    }
+}
+
+.section__item-infinite-animation {
+    animation: blinchik 5s linear infinite normal running 0s none;
+    background: url('../img/ehidnyi_yoba.png') center/contain no-repeat;
+}
+
+.section__item-infinite-animation:hover {
+    animation-play-state: paused;
+    background: url('../img/yoba.png') center/contain no-repeat;
+}
+
+@keyframes blinchik {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/*======================================================================================================================================================*/
+.block {
+    color: white;
+    font-size: 24px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+
+.block__main-title {
+    margin-bottom: 15px;
+}
+
+.block__title {
+    margin-bottom: 15px;
+    animation: title 1s ease forwards;
+    opacity: 0;
+}
+
+@keyframes title {
+    0% {
+        transform: translate(0, 75%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translate(0, 0);
+        opacity: 1;
+    }
+
+}
+
+.block__subtitle {
+    margin-bottom: 15px;
+    font-size: 18px;
+    opacity: 0;
+    animation: subtitle 1s ease 0.5s forwards;
+}
+
+@keyframes subtitle {
+    0% {
+        transform: translate(0, 75%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translate(0, 0);
+        opacity: 1;
+    }
+
+}
+
+.block__text {
+    opacity: 0;
+    animation: text-item 1s ease 1s forwards;
+}
+
+@keyframes text-item {
+    0% {
+        transform: translate(0, 75%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translate(0, 0);
+        opacity: 1;
+    }
+
+}
+
+/*======================================================================================================================================================*/
+
+.creative-block {
+    background-color: grey;
+    width: 1902px;
+    height: 1200px;
+    position: relative;
+}
+
+.creative-block__field {
+    background: rgb(0, 154, 23);
+    width: 1902px;
+    height: 600px;
+    position: absolute;
+    top: 600px;
+}
+
+.creative-block__sky {
+    background-color: rgb(0, 181, 226);
+    width: 1902px;
+    height: 600px;
+}
+
+.creative-block__yoba {
+    background: url('../img/ehidnyi_yoba.png') center /300px 300px no-repeat;
+    width: 300px;
+    height: 300px;
+    position: absolute;
+    transform: translate(-300px, 300px);
+    animation: yoba-rolls-in 15s linear 0s;
+}
+
+@keyframes yoba-rolls-in {
+    0% {
+        transform: translate(-300px, 300px) rotate(0deg);
+    }
+
+    25% {
+        transform: translate(300px, 300px) rotate(360deg);
+    }
+
+    35% {
+        transform: translate(300px, 300px) rotate(360deg);
+    }
+
+    45% {
+        background: url('../img/pekasuspicious.png') center /300px 300px no-repeat;
+        transform: translate(300px, 300px) rotate(360deg);
+    }
+
+    55% {
+        background: url('../img/pekabutt.png') center /300px 300px no-repeat;
+        transform: translate(300px, 300px) rotate(360deg);
+    }
+
+    65% {
+        background: url('../img/pekabutt.png') center /300px 300px no-repeat;
+        transform: translate(400px, 200px) scale(0.9);
+    }
+
+    75% {
+        background: url('../img/pekabutt.png') center /300px 300px no-repeat;
+        transform: translate(500px, 150px) scale(0.8);
+    }
+
+    85% {
+        background: url('../img/pekabutt.png') center /300px 300px no-repeat;
+        transform: translate(600px, 100px) scale(0.8);
+    }
+
+    95% {
+        background: url('../img/pekabutt.png') center /300px 300px no-repeat;
+        transform: translate(900px, -100px) scale(0.5);
+    }
+
+    100% {
+        background: url('../img/pekabutt.png') center /300px 300px no-repeat;
+        transform: translate(1300px, -400px) scale(0);
+    }
+}
+
+.creative-block__cloud {
+    width: 400px;
+    height: 200px;
+}
+
+.creative-block__cloud--position-one {
+    position: absolute;
+    top: 20px;
+    left: 600px;
+}
+
+.creative-block__cloud--position-two {
+    position: absolute;
+    top: 70px;
+    left: 1000px;
+}
+
+.creative-block__cloud--position-three {
+    position: absolute;
+    top: 20px;
+    left: 1400px;
+}
+
+.cloud__item-one {
+    background-color: white;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 115px;
+    left: 25px;
+    z-index: 1;
+}
+
+.cloud__item-two {
+    background-color: white;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 115px;
+    left: 60px;
+    z-index: 1;
+}
+
+.cloud__item-three {
+    background-color: white;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 115px;
+    left: 85px;
+    z-index: 1;
+}
+
+.cloud__item-four {
+    background-color: white;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 115px;
+    left: 105px;
+    z-index: 1;
+}
+
+.cloud__item-five {
+    background-color: white;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 115px;
+    left: 130px;
+    z-index: 1;
+}
+
+.cloud__item-six {
+    background-color: white;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 115px;
+    left: 155px;
+    z-index: 1;
+}
+
+.cloud__item-seven {
+    background-color: white;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 115px;
+    left: 180px;
+    z-index: 1;
+}
+
+.cloud__item-eight {
+    background-color: white;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 115px;
+    left: 205px;
+    z-index: 1;
+}
+
+.cloud__item-nine {
+    background-color: white;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 95px;
+    left: 45px;
+    z-index: 1;
+}
+
+.cloud__item-ten {
+    background-color: white;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 95px;
+    left: 65px;
+    z-index: 1;
+}
+
+.cloud__item-eleven {
+    background-color: white;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 95px;
+    left: 85px;
+    z-index: 1;
+}
+
+.cloud__item-eleven {
+    background-color: white;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 95px;
+    left: 100px;
+    z-index: 1;
+}
+
+.cloud__item-twelve {
+    background-color: white;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 95px;
+    left: 125px;
+    z-index: 1;
+}
+
+.cloud__item-thirteen {
+    background-color: white;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 95px;
+    left: 145px;
+    z-index: 1;
+}
+
+.cloud__item-fourteen {
+    background-color: white;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 95px;
+    left: 160px;
+    z-index: 1;
+}
+
+.cloud__item-fifteen {
+    background-color: white;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 95px;
+    left: 180px;
+    z-index: 1;
+}
